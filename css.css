@@ -130,23 +130,32 @@ a{
     color: #898989!important;
 }
 
-.clock:before {
+.slock:before {
     content: '';
-    width:  15px;
-    height: 15px;
+    width:  20px;
+    height: 14px;
     display: inline-block;
     background-image: url(img/clock.png);
     background-repeat: no-repeat;
     padding-left: 5px;
 }
-
-.local:before, .emailico:before, .telefoneico:before {
+.local:before {
     content: '';
-    width:  17px;
-    height: 24px;
+    width:  20px;
+    height: 20px;
     display: inline-block;
     background-repeat: no-repeat;
     padding-left: 1px;
+    padding-right: 2px;
+}
+.emailico:before, .telefoneico:before {
+    content: '';
+    width:  20px;
+    height: 14px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    padding-left: 1px;
+    padding-right: 2px;
 }
 .local:before {
     background-image: url('img/local.png');
