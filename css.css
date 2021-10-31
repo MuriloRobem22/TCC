@@ -124,7 +124,6 @@ a{
 }
 ::selection{
     color: #ffffff;
-    background-color: #252525;
 }
 .clock {
     color: #898989!important;
@@ -166,7 +165,8 @@ a{
 .telefoneico:before {
     background-image: url('img/telefoneico.png');
 }  
-
+.hr{
+    color: #1f374d;}
 
 
 
