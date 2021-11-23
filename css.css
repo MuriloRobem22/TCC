@@ -2,7 +2,10 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    color: white;
 }
+body{
+    background-color: #2400c4;}
 a{
     text-decoration: none;
 }
@@ -302,4 +305,23 @@ a{
                     box-shadow: 0 5px 15px rgba(0,0,0,0.6);
             }
          
-        
+            #topcontrol {
+                text-decoration: none;
+                background:#18d05d;
+                bottom: 2px;
+                right: 10px;
+                color: rgb ( 10 , 10 , 10);
+                text-align: center;
+                cursor: pointed;
+                padding: 15px;
+                bottom: 35px;
+                font-size: 10px;
+                font-weight: bold;
+                text-transform: uppercase;
+                position: fixed;
+                border-radius:70px;
+                font-family: sans-serif;
+                opacity: .8;
+                margin-bottom: 27px;
+            }
+           

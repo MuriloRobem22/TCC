@@ -14,20 +14,86 @@
   <title>DDHIDRO</title>
   <link rel="icon" type="image/png" href="img/DD HIDRO LOGO BRANCA.png" / style="height: 500px;">
 
+  <script type='text/javascript' language='Javascript'>
+    var scrolltotop={
+    //startline: Integer. Number of pixels from top of doc scrollbar is scrolled before showing control
+    //scrollto: Keyword (Integer, or "Scroll_to_Element_ID"). How far to scroll document up when control is clicked on (1=top).
+    setting: {startline:100, scrollto: 0, scrollduration:1000, fadeduration:[500, 100]},
+    controlHTML: '<a> ^ <br> subir </a>', //HTML for control, which is auto wrapped in DIV w/ ID="topcontrol"
+    controlattrs: {offsetx:5, offsety:5}, //offset of control relative to right/ center of window corner
+    anchorkeyword: '#top', //Enter href value of HTML anchors on the page that should also act as "Scroll Up" links
+    state: {isvisible:false, shouldvisible:false},
+    scrollup:function(){
+    if (!this.cssfixedsupport) //if control is positioned using JavaScript
+    this.$control.css({opacity:0}) //hide control immediately after clicking it
+    var dest=isNaN(this.setting.scrollto)? this.setting.scrollto : parseInt(this.setting.scrollto)
+    if (typeof dest=="string" && jQuery('#'+dest).length==1) //check element set by string exists
+    dest=jQuery('#'+dest).offset().top
+    else
+    dest=0
+    this.$body.animate({scrollTop: dest}, this.setting.scrollduration);
+    },
+    keepfixed:function(){
+    var $window=jQuery(window)
+    var controlx=$window.scrollLeft() + $window.width() - this.$control.width() - this.controlattrs.offsetx
+    var controly=$window.scrollTop() + $window.height() - this.$control.height() - this.controlattrs.offsety
+    this.$control.css({left:controlx+'px', top:controly+'px'})
+    },
+    togglecontrol:function(){
+    var scrolltop=jQuery(window).scrollTop()
+    if (!this.cssfixedsupport)
+    this.keepfixed()
+    this.state.shouldvisible=(scrolltop>=this.setting.startline)? true : false
+    if (this.state.shouldvisible && !this.state.isvisible){
+    this.$control.stop().animate({opacity:1}, this.setting.fadeduration[0])
+    this.state.isvisible=true
+    }
+    else if (this.state.shouldvisible==false && this.state.isvisible){
+    this.$control.stop().animate({opacity:0}, this.setting.fadeduration[1])
+    this.state.isvisible=false
+    }
+    },
+    init:function(){
+    jQuery(document).ready(function($){
+    var mainobj=scrolltotop
+    var iebrws=document.all
+    mainobj.cssfixedsupport=!iebrws || iebrws && document.compatMode=="CSS1Compat" && window.XMLHttpRequest //not IE or IE7+ browsers in standards mode
+    mainobj.$body=(window.opera)? (document.compatMode=="CSS1Compat"? $('html') : $('body')) : $('html,body')
+    mainobj.$control=$('<div id="topcontrol">'+mainobj.controlHTML+'</div>')
+    .css({position:mainobj.cssfixedsupport? 'fixed' : 'absolute', bottom:mainobj.controlattrs.offsety, right:mainobj.controlattrs.offsetx, opacity:0, cursor:'pointer'})
+    .attr({title:'Subir ao Topo!'})
+    .click(function(){mainobj.scrollup(); return false})
+    .appendTo('body')
+    if (document.all && !window.XMLHttpRequest && mainobj.$control.text()!='') //loose check for IE6 and below, plus whether control contains any text
+    mainobj.$control.css({width:mainobj.$control.width()}) //IE6- seems to require an explicit width on a DIV containing text
+    mainobj.togglecontrol()
+    $('a[href="' + mainobj.anchorkeyword +'"]').click(function(){
+    mainobj.scrollup()
+    return false
+    })
+    $(window).bind('scroll resize', function(e){
+    mainobj.togglecontrol()
+    })
+    })
+    }
+    }
+    scrolltotop.init()
+    </script>
+    
 
 </head>
 
-<body style="background:#548abd;
+<body style="background:#190186;
     height: 100%;
     margin: 0 auto;
     font-family: 'Homenaje', sans-serif;
     ">
   <div><a class="navbar-brand" href="#"
-      style="background:#007bff; display:flex; width: 100%;background: #007bff;display: flex;flex-direction: row;flex-wrap: wrap; justify-content: center; align-items: flex-start; align-content: space-around;">
+      style="background:#2400c4; display:flex; width: 100%;background: #2400c4;display: flex;flex-direction: row;flex-wrap: wrap; justify-content: center; align-items: flex-start; align-content: space-around;">
       <img src="img/DD-HIDRO-PRETO.png" height="100px" alt="" style="margin-right: 0px;">
     </a></div>
-  <nav class="navbar sticky-top navbar navbar-expand-lg navbar navbar-dark bg-primary"
-    style="padding-left: 2%;display: flex;justify-content: space-around;">
+    <nav class="navbar sticky-top navbar navbar-expand-lg navbar navbar-dark navbar-light "
+    style="padding-left: 2%;padding-left: 2%;display: flex;justify-content: space-around;background: #2400c4;">
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
       aria-controls="navbarTogglerDemo03" aria-expanded="true" aria-label="Toggle navigation">
@@ -37,29 +103,29 @@
 
 
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0" style="text-align: center;background:#007bff; display:flex; width: 100%;background: #007bff;display: flex;
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0" style="text-align: center;background:#2400c4; display:flex; width: 100%;background: #2400c4;display: flex;
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
       align-content: center;">
         <li class="nav-item active" style="padding-left: 0%;">
           <a id="ho" class="nav-link" href="index.html"
-            style="font-size: 18px;color:rgb(43, 30, 165);padding-right: 10px;border-left: solid rgb(43, 30, 165) 0px;border-right: solid rgb(43, 30, 165) 0px;">INICIO<span
+            style="font-size: 18px;color:rgb(255, 255, 255);padding-right: 10px;border-left: solid rgb(43, 30, 165) 0px;border-right: solid rgb(43, 30, 165) 0px;">INICIO<span
               class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
           <a id="ho" class="nav-link" href="detetizadora.html"
-            style="font-size: 18px;color:rgb(43, 30, 165);padding-right: 7px;border-right: solid rgb(43, 30, 165) 0px">DETETIZAÇÃO</a>
+            style="font-size: 18px;color:rgb(253, 253, 255);padding-right: 7px;border-right: solid rgb(43, 30, 165) 0px">DETETIZAÇÃO</a>
         </li>
       </ul>
     </div>
   </nav>
 
   <div class="tit1"
-    style="background: #007bff!important; text-align: center;border-radius: 0 0 55px 55px;font-size: 3rem;padding-top: 15px;padding-bottom: 10px;">
+    style="background: #2400c4!important; text-align: center;border-radius: 0 0 55px 55px;font-size: 3rem;padding-top: 15px;padding-bottom: 10px;">
     DESENTUPIMENTO
     <img src="img2/icons8-encanamento-90.png"
-      style="padding-left: 1%; height: 60px; padding-top: -3%;background: #007bff!important;">
+      style="padding-left: 1%; height: 60px; padding-top: -3%;background: #2400c4!important;">
   </div>
 
 
