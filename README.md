@@ -6,6 +6,3 @@
 
               </li>
               
-  <div class="tit1"  style="text-align: center;border-radius: 0 0 55px 55px;font-size: 3rem;padding-top: 35px;padding-bottom: 15px;padding-left: 20px;background-color: #ffffffb5;">
-    DESENTUPIMENTO <img src="img2/icons8-inseto-100.png"
-    style="padding-left: 1%; height: 60px; padding-top: -20%;">
