@@ -253,7 +253,7 @@ a{
             background:url('LOGOS/fthd.png');
         }
     }
-    @media screen and (Max-width: 1366px) { 
+    @media screen and (Max-width: 1899px) { 
         footer{
             background:url('LOGOS/FTE.png');
         }
@@ -377,3 +377,70 @@ a{
             }
  
            }
+        .H1F{
+            letter-spacing: 1px;
+            margin: 5px 0px 0PX 0PX;
+            padding: 10px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .H1F h1{
+            font-size: 2rem;
+            font-weight: 500;
+            background-color: #374DA2;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 0px 0px 0px 0px;
+        }
+        .H1F2{
+            letter-spacing: 1px;
+            padding: 10px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .H1F2 h1{
+            margin-bottom: -50px;
+            margin-top: -40px;
+            font-size: 2rem;
+            font-weight: 900;
+            background-color: #374ca200;
+            color: #000000;
+            padding: 10px 20px;
+            border-radius: 0px 0px 0px 0px;
+
+        }
+        .H1F3{
+            letter-spacing: 1px;
+            padding: 10px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .H1F3 h1{
+            margin-top: 5px;
+            font-size: 1rem;
+            font-weight: 900;
+            background-color: #374ca2;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 30px 30px 30px 30px;
+        }
+        #localp:before {
+                content: '';
+                width:  60px;
+                height: 47px;
+                display: inline-block;
+                background-repeat: no-repeat;
+                padding-left: 1px;
+                padding-right: 5px;
+                margin-bottom: -15px;
+        }
+        #localp:before {
+            background-image: url('logos/LOKP.png');}
