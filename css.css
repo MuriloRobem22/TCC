@@ -457,3 +457,13 @@ a{
         }
         #clockp:before {
             background-image: url('logos/clockp.png');}
+
+            .cont-box{
+                width:500px;
+                box-shadow: 15px 15px 45px 15px rgba(0, 0, 0, 0.489);
+                background-color: #ffffffb5;
+                border: 3px black;
+                padding: 20px;
+                margin: 15px;
+                border-radius: 0px 0px 0px 0px;
+            }
