@@ -466,4 +466,66 @@ a{
                 padding: 20px;
                 margin: 15px;
                 border-radius: 0px 0px 0px 0px;
+             
             }
+            .H1F4{
+                letter-spacing: 1px;
+                margin: 5px 0px 0PX 0PX;
+                padding: 10px 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: left;
+                align-items: flex-start;
+            }
+            .H1F4 h1{
+                font-size: 2rem;
+                font-weight: 500;
+                background-color: #374DA2;
+                color: #ffffff;
+                padding: 10px 20px;
+                border-radius: 0px 0px 0px 0px;
+            }
+            .msmLinha {
+                display: flex;
+                flex-direction: row;
+                width: auto;
+                
+              }
+
+              .cinza{
+            width: 20vw;
+        height: 20vw;
+    display: flex;
+align-items: center;
+justify-content: center;}
+    
+    .cinza img{ object-fit: contain;
+   width: 100%;height: 100%; }
+
+   #di{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+   }
+
+   @media screen and (max-width: 750px) { 
+
+      .cinza{
+    width: 30vw;
+height: 30vw;
+display: flex;
+align-items: center;
+justify-content: center;}
+}
+
+@media screen and (max-width: 500px) { 
+
+    .cinza{
+  width: 40vw;
+height: 40vw;
+display: flex;
+align-items: center;
+justify-content: center;}
+}
+
