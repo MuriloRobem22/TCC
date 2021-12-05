@@ -182,7 +182,9 @@ a{
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        background:url('LOGOS/FTE.png');
+    
+        background-attachment: fixed;
+        background-repeat: no-repeat;
     }
     
     .logofooter{
@@ -246,13 +248,20 @@ a{
         height: 20rem;
     }
     
-    
-    
+    @media screen and (MIN-width: 1900px) { 
+        footer{
+            background:url('LOGOS/fthd.png');
+        }
+    }
+    @media screen and (Max-width: 1366px) { 
+        footer{
+            background:url('LOGOS/FTE.png');
+        }
+    }
     @media screen and (MIN-width: 769px) { 
         footer{
             flex-direction: row;
             justify-content: space-evenly;
-            background:url('LOGOS/FTE2.png');
         }
         .conteudofooter{
             display: flex;
@@ -282,7 +291,7 @@ a{
         
       
             #ho:hover{
-              background-color: #4d3ef544;
+              background-color: #ffffff44;
               border-radius: 25px 25px 25px 25px;
                     border: 1px;
                     transition: transform 0.6s ease-in-out;  
@@ -346,5 +355,25 @@ a{
                 margin-bottom: 27px;
             }
            .t , .tit1, #ti {
-               font-weight: bold;
+               font-weight: 900;
+           }
+
+           #esp {
+               padding-left: 170px;
+               padding-right: 170px;
+           }
+
+           @media screen and (max-width: 650px) { 
+            #esp {
+                padding-left: 100px;
+                padding-right: 100px;
+            }
+ 
+           }
+           @media screen and (max-width:450px) { 
+            #esp {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+ 
            }
