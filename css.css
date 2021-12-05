@@ -444,3 +444,16 @@ a{
         }
         #localp:before {
             background-image: url('logos/LOKP.png');}
+
+            #clockp:before {
+                content: '';
+                width:  60px;
+                height: 49px;
+                display: inline-block;
+                background-repeat: no-repeat;
+                padding-left: 1px;
+                padding-right: 5px;
+                margin-bottom: -19px;
+        }
+        #clockp:before {
+            background-image: url('logos/clockp.png');}
