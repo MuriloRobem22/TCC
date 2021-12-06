@@ -474,8 +474,8 @@ a{
                 padding: 10px 20px;
                 display: flex;
                 flex-direction: column;
-                justify-content: left;
-                align-items: flex-start;
+                justify-content: center;
+                align-items: center;
             }
             .H1F4 h1{
                 font-size: 2rem;
