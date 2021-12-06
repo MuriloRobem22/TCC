@@ -499,7 +499,7 @@ a{
 align-items: center;
 justify-content: center;}
     
-    .cinza img{ object-fit: contain;
+    .cinza img{ object-fit: cover;
    width: 100%;height: 100%; }
 
    #di{
